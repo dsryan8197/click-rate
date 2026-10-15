@@ -3,7 +3,6 @@
 // thumbnail without touching the global setting.
 (() => {
   const MODES = ['auto', '1', '2', '3', 'original'];
-  const OVERRIDE_LIMIT = 500;
 
   // Matches YouTube's normal thumbnail images (hqdefault, hq720, mqdefault,
   // oardefault for Shorts, ..._live), but not chapter frames like
@@ -12,15 +11,13 @@
     /^https:\/\/i\d?\.ytimg\.com\/vi(?:_webp)?\/([\w-]{11})\/(?:[a-z0-9]*default|hq720|oar\d)(?:_live)?\.(?:jpg|webp)/;
 
   let globalMode = 'auto';
-  let overrides = {}; // video id -> mode
+  // Per-video picks from the hover button. Not saved: they last until the
+  // page is reloaded.
+  const overrides = {}; // video id -> mode
   const results = new Map(); // video id -> Promise<analysis>
 
-  const ready = Promise.all([
-    chrome.storage.sync.get({ mode: 'auto' }),
-    chrome.storage.local.get({ overrides: {} }),
-  ]).then(([sync, local]) => {
+  const ready = chrome.storage.sync.get({ mode: 'auto' }).then((sync) => {
     globalMode = sync.mode;
-    overrides = local.overrides;
   });
 
   function modeFor(id) {
@@ -174,10 +171,6 @@
     const next = MODES[(MODES.indexOf(modeFor(id)) + 1) % MODES.length];
     if (next === globalMode) delete overrides[id];
     else overrides[id] = next;
-
-    const ids = Object.keys(overrides);
-    if (ids.length > OVERRIDE_LIMIT) delete overrides[ids[0]];
-    chrome.storage.local.set({ overrides });
     reapply((img) => img.dataset.crId === id);
   }
 
@@ -192,10 +185,6 @@
   chrome.storage.onChanged.addListener((changes, area) => {
     if (area === 'sync' && changes.mode) {
       globalMode = changes.mode.newValue || 'auto';
-      reapply();
-    }
-    if (area === 'local' && changes.overrides) {
-      overrides = changes.overrides.newValue || {};
       reapply();
     }
   });

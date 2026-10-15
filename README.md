@@ -25,7 +25,7 @@ Click the Click Rate icon in the Chrome toolbar to choose a mode for every video
 - Frame 1, 2 or 3
 - Original thumbnail (turns it off)
 
-To change a single video, hover its thumbnail and click the **⟳** button in the top-left corner. Each click moves it to the next option: Auto → 1 → 2 → 3 → Original. Videos you've set by hand get an orange outline on the button. You can reset them all from the popup.
+To change a single video, hover its thumbnail and click the **⟳** button in the top-left corner. Each click moves it to the next option: Auto → 1 → 2 → 3 → Original. These per-video picks aren't saved, so a page reload puts every video back on the global setting.
 
 ## Install
 
