@@ -1,0 +1,34 @@
+/* Hide the original (clickbait) image while its frames are being scored. */
+img[data-cr-pending] {
+  opacity: 0 !important;
+}
+
+#cr-float {
+  position: fixed;
+  z-index: 2147483647;
+  padding: 5px 8px;
+  border: 0;
+  border-radius: 6px;
+  background: rgba(15, 15, 15, 0.82);
+  color: #fff;
+  font: 500 12px/1.2 Roboto, Arial, sans-serif;
+  white-space: nowrap;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s;
+}
+
+#cr-float.cr-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#cr-float:hover {
+  background: rgba(15, 15, 15, 0.95);
+}
+
+/* This video has its own choice, different from the global setting. */
+#cr-float.cr-custom {
+  box-shadow: inset 0 0 0 1.5px #ff8a5c;
+}

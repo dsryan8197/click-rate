@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Click Rate</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <img src="icons/icon48.png" alt="" width="28" height="28">
+    <div>
+      <h1>Click Rate</h1>
+      <p>Real frames instead of clickbait thumbnails</p>
+    </div>
+  </header>
+
+  <fieldset id="modes">
+    <legend>Thumbnail for every video</legend>
+    <label><input type="radio" name="mode" value="auto">
+      <span><b>Auto</b><small>Best of the three frames</small></span></label>
+    <label><input type="radio" name="mode" value="1">
+      <span><b>Frame 1</b><small>About 25% in</small></span></label>
+    <label><input type="radio" name="mode" value="2">
+      <span><b>Frame 2</b><small>About halfway</small></span></label>
+    <label><input type="radio" name="mode" value="3">
+      <span><b>Frame 3</b><small>About 75% in</small></span></label>
+    <label><input type="radio" name="mode" value="original">
+      <span><b>Original thumbnail</b><small>Turn Click Rate off</small></span></label>
+  </fieldset>
+
+  <p class="tip">Hover any thumbnail and click <b>⟳</b> to change just that video.</p>
+
+  <footer>
+    <span id="count"></span>
+    <button id="reset" type="button" hidden>Reset</button>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>
