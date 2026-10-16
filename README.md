@@ -1,4 +1,6 @@
-# Click Rate
+# Bait and Switch
+
+*Formerly Click Rate.*
 
 A Chrome extension that replaces YouTube's clickbait thumbnails with real frames from inside the video.
 
@@ -6,7 +8,7 @@ No AI, no accounts and no outside servers. It only loads images YouTube already 
 
 ## How it works
 
-YouTube automatically saves three still frames from every video, at about 25%, 50% and 75% of the way through. Click Rate swaps each thumbnail for one of those frames, using the sharpest version available (up to 1280×720).
+YouTube automatically saves three still frames from every video, at about 25%, 50% and 75% of the way through. Bait and Switch swaps each thumbnail for one of those frames, using the sharpest version available (up to 1280×720).
 
 In **Auto** mode it picks the best of the three with simple pixel maths:
 
@@ -19,7 +21,7 @@ The highest score wins, and the middle frame wins ties. Each video takes a few m
 
 ## Settings
 
-Click the Click Rate icon in the Chrome toolbar to choose a mode for every video:
+Click the Bait and Switch icon in the Chrome toolbar to choose a mode for every video:
 
 - Auto (best of 3)
 - Frame 1, 2 or 3

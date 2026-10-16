@@ -100,7 +100,7 @@
     floatBtn = document.createElement('button');
     floatBtn.id = 'cr-float';
     floatBtn.type = 'button';
-    floatBtn.title = 'Click Rate: change this thumbnail';
+    floatBtn.title = 'Bait and Switch: change this thumbnail';
     for (const type of ['pointerdown', 'mousedown', 'pointerup', 'mouseup']) {
       floatBtn.addEventListener(type, (e) => e.stopPropagation());
     }
