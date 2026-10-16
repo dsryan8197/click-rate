@@ -34,7 +34,7 @@ To change a single video, hover its thumbnail and click the **⟳** button in th
 1. Download this repo: **Code → Download ZIP**, then unzip it. Or run `git clone`.
 2. Open `chrome://extensions` in Chrome.
 3. Turn on **Developer mode** (top right).
-4. Click **Load unpacked** and choose the `click-rate` folder.
+4. Click **Load unpacked** and choose the `bait-and-switch` folder.
 5. Pin it from the puzzle-piece menu so the icon stays visible.
 
 After you change the code, click the reload arrow on the extension's card in `chrome://extensions`.
